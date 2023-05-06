@@ -23,7 +23,12 @@ class Solution(object):
             # recusrive call to get a list of said numbers
             perms = self.permute(nums)
 
-            # for each number add the number we popped in the 0 index
+            ## THIS IS THE IMPORTANT BIT
+            # we're taking the output of this perms and appending the number we popped
+            # so if we have [1,2]
+            # our perms our 1,2 and 2,1 because we pop 1 and then loop through the remainder
+            # and append the number we popped. aka pop 1, return 2, append 1 = [2,1] and then
+            # pop 2, return 1, append 2 and [1,2]
             for i in perms:
                 i.append(n)
             # add our permutations to the result
