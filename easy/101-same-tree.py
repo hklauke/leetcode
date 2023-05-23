@@ -14,23 +14,9 @@ class Solution(object):
         if p == None and q == None:
             return True
 
-        left,right = [], []
-        # this is basically the same as symmetric tree except i can traverse
-        # the trees in the same direction both times and therefore don't need
-        # any extra conditionals.
-        def traverse(root,stack):
-            if root == None:
-                stack.append(None)
-                return
-            stack.append(root.val)
-            traverse(root.left, stack)
-            traverse(root.right, stack)
-           
-
-        traverse(p, left)
-        traverse(q, right)
-            
        
-        if left == right:
-            return True
-        return False
+       
+        if p  and q and p.val == q.val:
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right,
+                                                                       q.right)
+        
