@@ -35,3 +35,5 @@ graph = {
 print("BFS traversal:")
 bfs(graph, 'A')
 ```
+
+![bfs](https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif)
